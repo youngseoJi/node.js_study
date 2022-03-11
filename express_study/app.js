@@ -8,10 +8,14 @@ const app = express();
 app.get("/sky/:id", (req, res, next) => {
   // console.log(req.path); //경로 /
   // console.log(req.headers); // 부가정보 {host: 'localhost:8080', connection: 'keep-alive',...}
-  console.log(req.params); //{ id: 'ys' }
-  console.log(req.params.id); // ys
-  console.log(req.query); // { keyword: 'bts' }
-  console.log(req.query.keyword); // bts
+  console.log(req.params);
+  // http://localhost:8080/sky/ys => { id: 'ys' }
+  console.log(req.params.id);
+  //  http://localhost:8080/sky/ys =>  ys
+  console.log(req.query);
+  //http://localhost:8080/sky/ys/?keyword=bts => { keyword: 'bts' }
+  console.log(req.query.keyword);
+  //http://localhost:8080/sky/ys/?keyword=bts => bts
 
   // 요청에 맞는, 데이터를  클라이언트에게 전달한다.
   // res.send("hello");
